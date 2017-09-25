@@ -1,0 +1,28 @@
+---
+layout: page
+title: Authors
+permalink: /authors/
+---
+
+<div class="d-flex justify-content-center" id="contact-section">
+	
+	<div class="flex-item">
+		<h2>Our Authors</h2>
+		<ul class="list-unstyled mt-3">
+			{% for author in site.authors %}
+				<li>
+					<img src="{{ author.image }}" alt="{{ author.name }}" class="rounded-circle d-inline mr-2 mb-2" width="25" height="25">
+					<a href="{{ author.url }}">
+						{{ author.name }}
+					</a>
+					<span class="badge bg-primary">{{ author.role }}</span>
+					{% assign writePost = site.posts | where: 'author', author.name | size %}
+					{% if writePost %}
+					<span class="badge bg-info">Writing: {{ writePost }} Articles</span>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	 </div>
+
+</div>

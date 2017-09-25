@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import "bootstrap_scss/bootstrap";
+
+$color-primary: #4A8EFD;
+$color-secondary: #184EA4;
+$body-bg: #f4f4f4;
+
+$d-small-none: none;
+$font-logo-small: 'Lato', sans-serif;
+
+body{
+	background-color: $body-bg;
+}
+
+.navbar{
+	background-color: $color-primary !important;
+	.navbar-brand{
+		img{
+			width: 30px;
+			height: 30px;
+		}
+	}
+}
+
+.btn-outline-light{
+	color: #fff;
+	&:hover{
+		color: #007bff !important;
+		cursor: pointer;
+	}
+}
+
+a:hover{
+	text-decoration: none;
+	color: #fff;
+}
+
+.link-post-by-author:hover{
+	color: #222;
+}

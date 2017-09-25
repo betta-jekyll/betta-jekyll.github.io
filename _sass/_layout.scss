@@ -1,0 +1,79 @@
+#main-section{
+	font-family: $font-logo-small;
+	height: 600px;
+	.flex-item{
+		margin-top: 230px;
+		color: #222333;
+	}
+}
+
+/* Hero Section Home */
+#hero-section {
+	background: url('https://images.pexels.com/photos/7096/people-woman-coffee-meeting.jpg?w=940&h=650&auto=compress&cs=tinysrgb') no-repeat top center;
+	background-size: cover;
+	height: 91.5vh;
+
+	.flex-item{
+		z-index: 100;
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: bold;
+
+		.arrlink{
+			font-size: 25px;
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+
+	&::before {
+		content: " ";
+		background: rgba(#222, 0.3);
+		height: 91.5vh;
+		width: 100%;
+		position: absolute;
+		top: 70;
+		color: #fff;
+	}
+}
+
+.main-footer {
+	a{
+		color: #fff;
+		text-decoration: none;
+		&:hover{
+			color: #222;
+		}
+	}
+}
+
+/* About Section */
+#about-section{
+	font-family: $font-logo-small;
+	height: 91.5vh;
+	background: url('https://images.pexels.com/photos/14676/pexels-photo-14676.png?w=940&h=650&auto=compress&cs=tinysrgb') no-repeat bottom center;
+	background-size: cover;
+	.flex-item{
+		width: 45%;
+		margin-top: 140px;
+		color: #fff;
+	}
+}
+
+/* Contact Section */
+#contact-section{
+	font-family: $font-logo-small;
+	height: 91.5vh;
+	background: #222;
+	.flex-item{
+		width: 70%;
+		margin-top: 60px;
+		color: #fff;
+	}
+}
+
+/* Blog */
+.fb-comments{
+	width: 100% !important;
+}

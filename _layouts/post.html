@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="container p-3">
+	<h2 class="text-center">{{ page.title }}</h2>
+	<div class="detail-publish clearfix">
+		<small class="float-left">
+			{{ page.date | date: "%B %d, %Y" }}
+		</small>
+		<small class="float-right">
+			{% assign author = site.data.authors[page.author] %}
+			{% if author %}
+			  
+			Publish by: <img src="{{ author.image }}" alt="{{ author.title }}" width="25" height="25" class="rounded-circle"> • {{ author.name }}
+			{% endif %}
+		</small>
+	</div>
+	<hr>
+
+	{{ content }}
+
+	<br>
+
+	<div class="fb-comments" data-href="{{ page.url | prepend: site.url }}" data-mobile="true" data-order-by="social" data-width="500" data-numposts="5"></div>
+</div>

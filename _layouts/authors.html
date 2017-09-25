@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="container p-3">
+	<h2 class="text-center">{{ page.title }}</h2>
+	<div class="text-center">
+		<img src="{{ page.image }}" alt="{{ page.title }}" width="100" height="100" class="rounded-circle">
+		<br>
+		<small>{{ page.role }}</small>
+	</div>
+	<p>
+		{{ content }}
+	</p>
+	<br>
+	<h3>Post by {{ page.name }}</h3>
+	<ul class="list-unstyled">
+		{% assign posts = site.posts | where: 'author', page.name %}
+		{% for post in posts %}
+			<li>
+				<h5><a href="{{ post.url }}" class="link-post-by-author">{{ post.title }}</a></h5>
+				<p>{{ post.meta }}</p>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

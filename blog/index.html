@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="container p-5">
+	<div class="row">
+		<div class="col-12 col-sm-12 col-md-8 col-lg-8">
+			<h2>Blog</h2>
+			<hr class="bg-primary">
+			{% for post in site.posts %}
+			<small><time>{{ post.date | date: "%B %-d, %Y" }}</time></small>
+			<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			{% endfor %}
+		</div>
+		<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+			<h2>Blog Archives</h2>
+			<hr class="bg-primary">
+			{% for post in site.posts %}
+				{% assign currentDate = post.date | date: "%Y" %}
+				{% if currentDate != myDate %}
+					{% unless forloop.first %}</ul>{% endunless %}
+					<h4>{{ currentDate }}</h4>
+					<ul>
+					{% assign myDate = currentDate %}
+				{% endif %}
+					<li>
+						<a href="{{ post.url }}">
+							<span class="text-muted">{{ post.date | date: "%B %-d, %Y" }}</span>
+							{{ post.title }}
+						</a>
+					</li>
+				{% if forloop.last %}</ul>{% endif %}
+			{% endfor %}
+		</div>
+		<p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>	
+	</div>
+</div>
